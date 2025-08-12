@@ -1,0 +1,128 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  category    String
+  material    String   @default("Wood")
+  dimensions  String?
+  weight      Float?
+  color       String?
+  brand       String?
+  imageUrl    String
+  inStock     Boolean  @default(true)
+  featured    Boolean  @default(false)
+  rating      Float    @default(4.0)
+  reviewCount Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  cartItems   CartItem[]
+  orderItems  OrderItem[]
+}
+
+model Cart {
+  id        String     @id @default(cuid())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  
+  items     CartItem[]
+}
+
+model CartItem {
+  id        String  @id @default(cuid())
+  quantity  Int
+  
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  cartId    String
+  
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+  
+  @@unique([cartId, productId])
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  orderNumber String      @unique
+  total       Float
+  status      String      @default("pending")
+  paymentMethod String
+  paymentStatus String    @default("pending")
+  customerName String
+  customerEmail String
+  customerPhone String
+  shippingAddress String
+  trackingNumber String?
+  estimatedDelivery DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  
+  items       OrderItem[]
+}
+
+model CustomOrder {
+  id          String   @id @default(cuid())
+  customerName String
+  customerEmail String
+  customerPhone String
+  description String
+  budget      Float?
+  status      String   @default("inquiry")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SupportRequest {
+  id          String   @id @default(cuid())
+  type        String   // "repair", "return", "general", "replacement"
+  orderId     String?
+  customerName String
+  customerEmail String
+  customerPhone String?
+  subject     String
+  description String
+  status      String   @default("open")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ReturnRequest {
+  id          String   @id @default(cuid())
+  orderId     String
+  orderNumber String
+  customerName String
+  customerEmail String
+  customerPhone String
+  reason      String
+  type        String   // "return", "replacement"
+  description String
+  status      String   @default("pending")
+  refundAmount Float?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  quantity  Int
+  price     Float
+  
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId   String
+  
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+}
