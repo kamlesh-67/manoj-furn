@@ -1,9 +1,10 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { ArrowLeft, Package, Truck, CheckCircle, Clock, MapPin } from "lucide-react"
+import { ArrowLeft, Truck, CheckCircle, Clock, MapPin } from "lucide-react"
 
 // Mock data - in real app, this would come from database/API
 const mockOrder = {
@@ -173,9 +174,11 @@ export default function OrderDetailsPage() {
                 {mockOrder.items.map((item) => (
                   <div key={item.id} className="flex items-center space-x-4">
                     <div className="relative w-16 h-16 flex-shrink-0">
-                      <img
+                      <Image
                         src={item.imageUrl}
                         alt={item.name}
+                        width={64}
+                        height={64}
                         className="w-full h-full object-cover rounded-md"
                       />
                     </div>

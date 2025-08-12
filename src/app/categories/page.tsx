@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/db"
 import Link from "next/link"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 export default async function CategoriesPage() {
@@ -62,7 +62,7 @@ export default async function CategoriesPage() {
       </div>
 
       <div className="mt-16 text-center">
-        <h2 className="text-2xl font-bold mb-4">Can't find what you're looking for?</h2>
+        <h2 className="text-2xl font-bold mb-4">Can&apos;t find what you&apos;re looking for?</h2>
         <p className="text-muted-foreground mb-6">
           Browse all our products or use our search feature to find exactly what you need.
         </p>

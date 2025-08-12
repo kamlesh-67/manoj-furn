@@ -21,6 +21,7 @@ export default async function ProductsPage({
   const { category, material, search, minPrice, maxPrice, sortBy } = params
 
   // Build where clause
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const whereClause: any = {}
   
   if (category) whereClause.category = category
@@ -39,6 +40,7 @@ export default async function ProductsPage({
   }
 
   // Build orderBy clause
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let orderBy: any = { createdAt: 'desc' }
   switch (sortBy) {
     case 'price-low':
@@ -85,8 +87,6 @@ export default async function ProductsPage({
               materials={materials.map(m => m.material)}
               currentCategory={category}
               currentMaterial={material}
-              minPrice={minPrice ? parseInt(minPrice) : undefined}
-              maxPrice={maxPrice ? parseInt(maxPrice) : undefined}
             />
           </div>
         </aside>

@@ -1,7 +1,10 @@
 {
   "name": "furniture-store",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A modern furniture e-commerce platform built with Next.js 15",
   "private": true,
+  "author": "Your Name",
+  "keywords": ["nextjs", "ecommerce", "furniture", "react", "typescript", "tailwindcss"],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

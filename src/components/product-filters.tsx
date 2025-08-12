@@ -6,8 +6,7 @@ import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
+
 import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 
@@ -16,17 +15,13 @@ interface ProductFiltersProps {
   materials: string[]
   currentCategory?: string
   currentMaterial?: string
-  minPrice?: number
-  maxPrice?: number
 }
 
 export function ProductFilters({ 
   categories, 
   materials, 
   currentCategory,
-  currentMaterial,
-  minPrice = 0,
-  maxPrice = 100000
+  currentMaterial
 }: ProductFiltersProps) {
   const searchParams = useSearchParams()
   const router = useRouter()

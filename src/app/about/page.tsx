@@ -32,8 +32,8 @@ export default function AboutPage() {
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">About FurnitureStore</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          We're passionate about creating beautiful, functional furniture that transforms houses into homes. 
-          Since our founding, we've been committed to quality, craftsmanship, and exceptional customer service.
+          We&apos;re passionate about creating beautiful, functional furniture that transforms houses into homes. 
+          Since our founding, we&apos;ve been committed to quality, craftsmanship, and exceptional customer service.
         </p>
       </div>
 
@@ -47,13 +47,13 @@ export default function AboutPage() {
               to provide high-quality, affordable furniture that brings comfort and style to every home.
             </p>
             <p>
-              Over the years, we've grown from a local showroom to a trusted online retailer, 
+              Over the years, we&apos;ve grown from a local showroom to a trusted online retailer, 
               but our commitment to quality and customer satisfaction remains unchanged. We carefully 
               select each piece in our collection, working directly with skilled craftsmen and 
               reputable manufacturers.
             </p>
             <p>
-              Today, we're proud to serve thousands of customers nationwide, helping them create 
+              Today, we&apos;re proud to serve thousands of customers nationwide, helping them create 
               spaces they love with furniture that lasts.
             </p>
           </div>
@@ -117,14 +117,14 @@ export default function AboutPage() {
           <div className="text-center">
             <Badge variant="outline" className="mb-4">Sustainability</Badge>
             <p className="text-muted-foreground">
-              We're committed to sustainable practices and work with eco-conscious 
+              We&apos;re committed to sustainable practices and work with eco-conscious 
               manufacturers whenever possible.
             </p>
           </div>
           <div className="text-center">
             <Badge variant="outline" className="mb-4">Customer First</Badge>
             <p className="text-muted-foreground">
-              Your satisfaction is our priority. We're here to help you every step 
+              Your satisfaction is our priority. We&apos;re here to help you every step 
               of the way, from selection to delivery.
             </p>
           </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
         <p className="text-muted-foreground mb-6">
           Have questions about our products or need help choosing the perfect piece? 
-          We'd love to hear from you.
+          We&apos;d love to hear from you.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 

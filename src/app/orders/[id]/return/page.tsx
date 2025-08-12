@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -276,9 +277,11 @@ export default function ReturnPage() {
                 <p className="text-sm font-medium mb-3">Items</p>
                 {mockOrder.items.map((item) => (
                   <div key={item.id} className="flex items-center space-x-3 mb-3">
-                    <img
+                    <Image
                       src={item.imageUrl}
                       alt={item.name}
+                      width={48}
+                      height={48}
                       className="w-12 h-12 object-cover rounded-md"
                     />
                     <div className="flex-1">

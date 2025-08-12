@@ -7,9 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Separator } from "@/components/ui/separator"
-import { Badge } from "@/components/ui/badge"
-import { Phone, Mail, MessageCircle, Package, RefreshCw, Wrench, Clock, CheckCircle } from "lucide-react"
+import { Phone, Mail, MessageCircle, Package, RefreshCw, Wrench, Clock } from "lucide-react"
 import { toast } from "sonner"
 
 export default function SupportPage() {
@@ -73,7 +71,7 @@ export default function SupportPage() {
       <div className="mb-6 sm:mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold mb-2">Help & Support</h1>
         <p className="text-sm sm:text-base text-muted-foreground">
-          We're here to help! Get support for orders, returns, repairs, and more.
+          We&apos;re here to help! Get support for orders, returns, repairs, and more.
         </p>
       </div>
 

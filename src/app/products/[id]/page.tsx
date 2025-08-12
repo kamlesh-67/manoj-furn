@@ -16,6 +16,10 @@ interface Product {
   description: string
   price: number
   category: string
+  material?: string | null
+  brand?: string | null
+  rating?: number | null
+  reviewCount?: number | null
   imageUrl: string
   inStock: boolean
 }

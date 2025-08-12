@@ -45,7 +45,7 @@ export default function CheckoutSuccessPage() {
         <div className="space-y-4 mb-8">
           <div className="flex items-center justify-center gap-2 text-muted-foreground">
             <Package className="h-5 w-5" />
-            <span>We'll send you tracking information once your order ships</span>
+            <span>We&apos;ll send you tracking information once your order ships</span>
           </div>
           <p className="text-sm text-muted-foreground">
             A confirmation email has been sent to your email address with order details.
